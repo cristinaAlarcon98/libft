@@ -1,95 +1,56 @@
-# Libft
+# Libft - My Own Library
 
-Libft is a custom C library that contains commonly used functions and utility tools for programming in C. This library is designed to help developers save time by providing well-tested implementations of functions that are often used in various projects.
+Welcome to **Libft**, a library where I implemented common C standard library functions from scratch. This project is a collection of essential functions that handle memory, strings, and character manipulations. It's my way of learning and understanding the underlying workings of these functions.
 
----
+## Description
 
-## Introduction
-
-`Libft` is a collection of standard C functions and custom implementations designed to be used in projects that require utility functions such as string manipulation, memory allocation, character checks, and more. It serves as the foundation of many C projects, helping to standardize and optimize the development process.
-
----
+Libft is a project where I created my own versions of some common functions found in the C standard library. By writing them myself, I gained a deeper understanding of how these functions work and how to use them in more complex programs. The library includes functions for memory manipulation, string handling, and character classification, all designed to replace or complement standard C functions.
 
 ## List of Functions
 
-### String Functions
-- `ft_strlen()`: Returns the length of a string.
-- `ft_strdup()`: Duplicates a string by dynamically allocating memory.
-- `ft_strcpy()`: Copies a string to another buffer.
-- `ft_strcmp()`: Compares two strings lexicographically.
-
 ### Memory Functions
-- `ft_memset()`: Fills memory with a specified value.
-- `ft_memcpy()`: Copies memory from one location to another.
-- `ft_memmove()`: Moves memory from one location to another, handling overlapping regions.
+
+- **`memset`**: Fills a block of memory with a specific value.
+- **`bzero`**: Sets a block of memory to zero.
+- **`memcpy`**: Copies memory from one location to another.
+- **`memccpy`**: Copies memory until a certain character is found.
+- **`memmove`**: Moves memory from one location to another, handling overlapping regions.
+- **`memchr`**: Searches for a character in a block of memory.
+- **`memcmp`**: Compares two blocks of memory.
+
+### String Functions
+
+- **`strlen`**: Calculates the length of a string.
+- **`strdup`**: Duplicates a string.
+- **`strcpy`**: Copies a string.
+- **`strncpy`**: Copies up to a specified number of characters from one string to another.
+- **`strcat`**: Concatenates two strings.
+- **`strncat`**: Concatenates a specified number of characters from one string to another.
+- **`strlcat`**: Safely concatenates strings while ensuring the destination buffer is not overflowed.
+- **`strchr`**: Finds the first occurrence of a character in a string.
+- **`strrchr`**: Finds the last occurrence of a character in a string.
+- **`strstr`**: Searches for a substring within a string.
+- **`strnstr`**: Searches for a substring within a string up to a specified length.
+- **`strcmp`**: Compares two strings.
+- **`strncmp`**: Compares up to a specified number of characters of two strings.
 
 ### Character Functions
-- `ft_isdigit()`: Checks if a character is a digit.
-- `ft_isalpha()`: Checks if a character is an alphabetic letter.
-- `ft_isalnum()`: Checks if a character is alphanumeric.
-- `ft_isascii()`: Checks if a character is within the ASCII range.
 
-### List Functions
-- `ft_lstnew()`: Creates a new list element.
-- `ft_lstadd_front()`: Adds an element to the front of the list.
-- `ft_lstsize()`: Returns the size of the list.
-- `ft_lstlast()`: Returns the last element in the list.
-
-### Other Utility Functions
-- `ft_itoa()`: Converts an integer to a string.
-- `ft_strjoin()`: Joins two strings into one.
-- `ft_strtrim()`: Removes leading and trailing whitespace characters from a string.
-- `ft_putchar_fd()`: Writes a character to a file descriptor.
-- `ft_putstr_fd()`: Writes a string to a file descriptor.
-
-*This list can be expanded based on your implementations.*
-
----
+- **`atoi`**: Converts a string to an integer.
+- **`isalpha`**: Checks if a character is alphabetic.
+- **`isdigit`**: Checks if a character is a digit.
+- **`isalnum`**: Checks if a character is alphanumeric.
+- **`isascii`**: Checks if a character is an ASCII character.
+- **`isprint`**: Checks if a character is printable.
+- **`toupper`**: Converts a character to uppercase.
+- **`tolower`**: Converts a character to lowercase.
 
 ## Usage
 
-1. Clone the repository:
+To use the functions from this library, simply include the appropriate header file in your project. You can compile and link the library into your projects to replace or extend standard C functions.
 
-    ```bash
-    git clone https://github.com/yourusername/libft.git
-    ```
+### Compilation
 
-2. Navigate to the library folder:
-
-    ```bash
-    cd libft
-    ```
-
-3. Compile the library using `make`:
-
-    ```bash
-    make
-    ```
-
-4. Link the `libft.a` static library to your project:
-
-    ```bash
-    gcc -o your_program your_program.c -L. -lft
-    ```
-
----
-
-## Installation
-
-To install `libft` to your system or local project:
-
-1. Compile the library using `make`:
-
-    ```bash
-    make
-    ```
-
-2. If you want to install it globally, you can run:
-
-    ```bash
-    sudo make install
-    ```
-
-   This will copy the compiled `libft.a` to your system's default library directory.
-
-
+```bash
+gcc -Wall -Wextra -Werror -c *.c
+ar rcs libft.a *.o
